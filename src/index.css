@@ -1,0 +1,122 @@
+/* -------------------------------
+   Google Font
+--------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* -------------------------------
+   Tailwind Core
+--------------------------------*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* -------------------------------
+   Base Layer Customization
+--------------------------------*/
+@layer base {
+
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    background: linear-gradient(
+      to bottom right,
+      #f8fafc,
+      #eef2ff,
+      #f1f5f9
+    );
+
+    color: #1f2937;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+}
+
+
+/* -------------------------------
+   Components Layer
+--------------------------------*/
+@layer components {
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-lg hover:-translate-y-[2px] transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition;
+  }
+
+}
+
+
+/* -------------------------------
+   Utilities Layer
+--------------------------------*/
+@layer utilities {
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(100,100,100,0.3);
+    border-radius: 10px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(100,100,100,0.5);
+  }
+
+  .dragging {
+    opacity: 0.6;
+    transform: rotate(2deg);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.25s ease;
+  }
+
+}
+
+
+/* -------------------------------
+   Animations
+--------------------------------*/
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
